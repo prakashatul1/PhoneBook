@@ -12,7 +12,7 @@ def random_num(y):
     return ''.join(str(random.randint(0,9)) for x in range(y))
 
 
-class UnitTestCase(TestCase):
+class ContactTestCase(TestCase):
 
     name = random_char(random.randint(0, 9))
 
@@ -26,8 +26,5 @@ class UnitTestCase(TestCase):
 
         phone = Phone.objects.filter(contact__name=self.name)[0]
         self.assertEqual(phone.contact.name, self.name)
-
-
-
 
 
