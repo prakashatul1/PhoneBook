@@ -25,10 +25,7 @@ class UnitTestCase(TestCase):
     def getPhonefromContact(self):
 
         phone = Phone.objects.filter(contact__name=self.name)[0]
-        if phone.contact.name == self.name:
-            pass
-        else:
-            print("Test Faild")
+        self.assertEqual(phone.contact.name, self.name)
 
 
 
